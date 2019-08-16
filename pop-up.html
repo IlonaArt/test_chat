@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pop-up</title>
+</head>
+<body>
+    <section class="pop-up pop-up__wrap">
+        <header class="pop-up__header header">
+            <img class="header__user-img" src="img/img_main.jpg" width="45" height="45" alt="Токсикова Ольга, аватар">
+            <div class="header__wrap">
+                <b class="user">Токсикова Ольга</b>
+                <span class="user-location">Днепропетровск</span>
+            </div>
+            <button class="header__button-close" type="button" aria-label="Кнопка закрытия окна"></button>
+        </header>
+        <div class="pop-up-content">
+            <div class="dialogues-wrap">
+                <div class="dialogues">
+                    <div class="dialogue">
+                        <img class="user-img" src="img/img1.jpg" width="31" height="31" alt="Токсикова Ольга, аватар">
+                        <p class="user-text"></p>
+                        <div class="date">вчера в 17.45</div>
+                    </div>
+                    <div class="dialogue">
+                        <img class="user-img" src="img/img2.jpg" width="31" height="31" alt="Модератор, аватар">
+                        <p class="user-text"></p>
+                        <div class="date">вчера в 18.45</div>
+                    </div>
+                    <div class="dialogue">
+                        <img class="user-img" src="img/img1.jpg" width="31" height="31" alt="Токсикова Ольга, аватар">
+                        <p class="user-text"></p>
+                        <div class="date">сегодня в 17.45</div>
+                    </div>
+                    <div class="dialogue">
+                        <img class="user-img" src="img/img2.jpg" width="31" height="31" alt="Модератор, аватар">
+                        <p class="user-text"></p>
+                        <div class="date">18.45</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-wrap">
+                <img class="moderator-img" src="img/mod_img.jpg" width="45" height="45" alt="Модератор, аватар">
+                <form action="" class="form">
+                    <label for="message"></label>
+                    <textarea class="input-message" id="message" name="message" rows="3"></textarea>
+                    <button class="submit-button" type="submit">Отправить</button>    
+                </form>
+            </div>    
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
