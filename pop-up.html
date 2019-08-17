@@ -10,47 +10,48 @@
 <body>
     <section class="pop-up pop-up__wrap">
         <header class="pop-up__header header">
-            <img class="header__user-img" src="img/img_main.jpg" width="45" height="45" alt="Токсикова Ольга, аватар">
-            <div class="header__wrap">
-                <b class="user">Токсикова Ольга</b>
-                <span class="user-location">Днепропетровск</span>
-            </div>
+            <div class="header__img-wrap">
+                <img class="header__user-img" src="img/img_main.jpg" width="45" height="45" alt="Токсикова Ольга, аватар">
+                <div class="header__wrap">
+                    <b class="user">Токсикова Ольга</b>
+                    <span class="user-location">Днепропетровск</span>
+                </div>
+            </div>    
             <button class="header__button-close" type="button" aria-label="Кнопка закрытия окна"></button>
         </header>
-        <div class="pop-up-content">
-            <div class="dialogues-wrap">
-                <div class="dialogues">
-                    <div class="dialogue">
-                        <img class="user-img" src="img/img1.jpg" width="31" height="31" alt="Токсикова Ольга, аватар">
-                        <p class="user-text"></p>
-                        <div class="date">вчера в 17.45</div>
-                    </div>
-                    <div class="dialogue">
-                        <img class="user-img" src="img/img2.jpg" width="31" height="31" alt="Модератор, аватар">
-                        <p class="user-text"></p>
-                        <div class="date">вчера в 18.45</div>
-                    </div>
-                    <div class="dialogue">
-                        <img class="user-img" src="img/img1.jpg" width="31" height="31" alt="Токсикова Ольга, аватар">
-                        <p class="user-text"></p>
-                        <div class="date">сегодня в 17.45</div>
-                    </div>
-                    <div class="dialogue">
-                        <img class="user-img" src="img/img2.jpg" width="31" height="31" alt="Модератор, аватар">
-                        <p class="user-text"></p>
-                        <div class="date">18.45</div>
-                    </div>
-                </div>
+        <div class="dialogue">
+            <div class="dialogue__item dialogue-message">
+                <img class="dialogue-message__user-img" src="img/img1.jpg" width="31" height="31" alt="Токсикова Ольга, аватар">
+                <p class="dialogue-message__user-text">Где взять на прокат вечернее красивое платье? А еще лучше дизайнерское! Предстоит участие в мероприятии, 
+                    где все гости будут наверняка одеты в наряды "от кутюр", а у меня со средствами туговато, да и жалко на один раз такие деньжищи 
+                    отваливать. Мне</p>
+                <div class="dialogue-message__date">вчера в 17.45</div>
             </div>
-            <div class="form-wrap">
-                <img class="moderator-img" src="img/mod_img.jpg" width="45" height="45" alt="Модератор, аватар">
-                <form action="" class="form">
-                    <label for="message"></label>
-                    <textarea class="input-message" id="message" name="message" rows="3"></textarea>
-                    <button class="submit-button" type="submit">Отправить</button>    
-                </form>
-            </div>    
+            <div class="dialogue__item dialogue__item_owner dialogue-message">
+                <img class="dialogue-message__user-img" src="img/img2.jpg" width="31" height="31" alt="Мой аватар">
+                <p class="dialogue-message__user-text">Поисковик вам в помощь! Но цена примерно в половину стоимости платья.</p>
+                <div class="dialogue-message__date">вчера в 18.45</div>
+            </div>
+            <div class="dialogue__item dialogue-message">
+                <img class="dialogue-message__user-img" src="img/img1.jpg" width="31" height="31" alt="Токсикова Ольга, аватар">
+                <p class="dialogue-message__user-text">Где взять на прокат вечернее красивое платье? А еще лучше дизайнерское! Предстоит участие в мероприятии, 
+                        где все гости будут наверняка одеты в наряды "от кутюр", а у меня со средствами туговато</p>
+                <div class="dialogue-message__date">сегодня в 17.45</div>
+            </div>
+            <div class="dialogue__item dialogue__item_owner dialogue-message">
+                <img class="dialogue-message__user-img" src="img/img2.jpg" width="31" height="31" alt="Мой аватар">
+                <p class="dialogue-message__user-text">Поисковик вам в помощь! Но цена примерно в половину стоимости платья.</p>
+                <div class="dialogue-message__date">18.45</div>
+            </div>
         </div>
+        <div class="message-form">
+            <img class="message-form__avatar" src="img/mod_img.jpg" width="45" height="45" alt="Мой, аватар">
+            <form id="message-form" action="">
+                <label for="message"></label>
+                <textarea class="message-form__textarea" id="message" name="message" rows="4"></textarea>
+                <button class="message-form__submit-button" type="submit">Отправить</button>    
+            </form>
+        </div>    
     </section>
     <script src="script.js"></script>
 </body>

@@ -1,7 +1,19 @@
-
+:root {
+    --font-color: #3e3e3e;
+    --user-color: #000000;
+    --small-font: #7f7f7f;
+    --button-background: #d4d4d8;
+    --border-color: rgba(173, 173, 173, 0.25);
+    --sent-message-color: rgba(240, 236, 240, 0.53);
+    --new-message-color: #e9f2fa;
+}
 
 * {
     box-sizing: border-box;
+}
+
+p {
+    margin: 0;
 }
 
 html, body {
@@ -12,39 +24,45 @@ button {
     cursor: pointer;
 }
 
-@font-face {
-    font-family: "Arial MT";
-    src: url("fonts/arial-webfont.woff") format("woff"),
-        url("fonts/arial-webfont.woff2") format("woff2");
-}
-
 body {
-    font-family: "Arial MT", "Arial", sans-serif;
+    font-family: "Arial", sans-serif;
     font-size: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
+    color: #3e3e3e; /* for IE11 */
+    color: var( --font-color);
 }
 
 .pop-up {
+    display: flex;
+    flex-direction: column;
     width: 600px;
-    max-height: 550px;
+    height: 550px;
     box-shadow: -1px 1px 16px 2px rgba(52, 56, 63, 0.46), 
                 inset 0 0 6px rgba(255, 255, 255, 0.09);
     border-radius: 6px;
 }
 
 .pop-up__header {
+    flex-shrink: 0;
     display: flex;
     padding: 23px 7px 14px 30px;
     background: url("img/stripes.jpg") no-repeat 100% 0;
     background-size: contain;
     border-radius: 6px 6px 0 0;
+    border-bottom: 1px solid rgba(173, 173, 173, 0.25); /* for IE 11*/
+    border-bottom: 1px solid var(--border-color);
 }
 
 .header__user-img {
     margin-right: 14px;
+}
+
+.header__img-wrap {
+    display: flex;
+    padding-top: 4px;
 }
 
 .header__wrap {
@@ -56,14 +74,107 @@ body {
     font-size: 1.714em;
     line-height: 20px;
     margin-bottom: 5px;
+    color: #000000; /* for IE11*/
+    color: var(--user-color);
 }
 
 .user-location {
     font-size: 1.143em;
     line-height: 20px;
+    color: #7f7f7f; /* for IE11*/
+    color: var(--small-font);
 }
 
-.date {
+.header__button-close {
+    border: none;
+    padding: 0;
+    margin-left: auto;
+    width: 23px;
+    height: 23px;
+    background: transparent url("img/close.png") no-repeat 0 100%;
+}
+
+.dialogue {
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex-grow: 1;
+    padding: 13px 15px 7px 30px;
+}
+
+.dialogue-message {
+    display: flex;
+    padding: 6px 6px 8px 15px;
+}
+
+.dialogue-message:not(:last-child) {
+    margin-bottom: 18px;
+}
+
+.dialogue__item_owner {
+    background-color: rgba(240, 236, 240, 0.53); /* for IE11 */
+    background-color: var(--sent-message-color);
+}
+
+.dialogue-message__user-img {
+    margin-right: 14px;
+    margin-top: 2px;
+}
+
+.dialogue-message__user-text {
+    flex-grow: 1;
+    margin-right: 36px;
+    line-height: 18px;
+}
+
+.dialogue-message__date {
+    flex-shrink: 0;
+    margin-left: auto;
     font-size: 0.857em;
+    color: #7f7f7f; /* for IE11*/
+    color: var(--small-font);
 }
 
+.message-form {
+    flex-shrink: 0;
+    display: flex;
+    padding: 12px 30px 9px;
+    background-color: #e9f2fa; /* for IE11 */
+    background-color: var(--new-message-color);
+    border-radius: 0 0 6px 6px;
+}
+
+.message-form form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.message-form__avatar {
+    margin-right: 14px;
+}
+
+.message-form__textarea {
+    resize: none;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    border-radius: 3px; 
+    margin-bottom: 7px;
+}
+
+.message-form__submit-button {
+    font-size: 1.143em;
+    width: 135px;
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid rgba(2, 3, 2, 0.26);
+    background-image: linear-gradient(to top, #d4d4d8 0%, #ffffff 100%); /* for IE11 */
+    background-image: linear-gradient(to top, var(--button-background) 0%, #ffffff 100%);
+    color: #3e3e3e; /* for IE11 */
+    color: var(--font-color);
+}
+
+.highlighter {
+    background-color: #e9f2fa;
+    background-color: var(--new-message-color);
+}
