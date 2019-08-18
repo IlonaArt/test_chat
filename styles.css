@@ -43,6 +43,19 @@ body {
     color: var( --font-color);
 }
 
+::-webkit-scrollbar {
+    width: 22px;
+    background-color: #ffffff;        /* for IE11 */
+    background-color: var(--scrollbar-color);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    background-color: #c2c2c2;        /* for IE11 */
+    background-color: var(--scrollbar-thumb-color);
+    border: 7px solid var(--scrollbar-color);
+}
+
 .pop-up {
     display: flex;
     flex-direction: column;
@@ -178,7 +191,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     flex-grow: 1;
-    padding: 13px 15px 0 30px;
+    padding: 13px 8px 0 30px;
 }
 
 .dialogue-message {
@@ -207,9 +220,12 @@ body {
 }
 
 .dialogue-message__user-text {
+    overflow: hidden;
     flex-grow: 1;
     margin-right: 36px;
     line-height: 18px;
+    word-break: break-word;
+    word-wrap: break-word;
 }
 
 .dialogue-message__date {
@@ -218,22 +234,6 @@ body {
     font-size: 0.857em;
     color: #7f7f7f; /* for IE11*/
     color: var(--small-font);
-}
-
-::-webkit-scrollbar {
-    width: 8px;
-    background-color: #ffffff;        /* for IE11 */
-    background-color: var(--scrollbar-color);
-}
-
-::-webkit-scrollbar-thumb {
-    width: 12px;
-    border-radius: 3px;
-    border: 7px solid transparent;
-    background-color: #c2c2c2;        /* for IE11 */
-    background-color: var(--scrollbar-thumb-color);
-    padding-bottom: 12px;
-    padding-right: 7px;
 }
 
 .message-form {
@@ -257,13 +257,14 @@ body {
 
 .message-form__textarea {
     resize: none;
+    border-radius: 3px;
+    padding: 5px; 
+    border: 1px solid rgba(85, 85, 85, 0.38);          /* for IE11 */
+    border: 1px solid var(--border-message-color);
+    margin-bottom: 7px;
     font-size: inherit;
     font-family: inherit;
     color: inherit;
-    border-radius: 3px; 
-    margin-bottom: 7px;
-    border: 1px solid rgba(85, 85, 85, 0.38);          /* for IE11 */
-    border: 1px solid var(--border-message-color);
 }
 
 .message-form__submit-button,
