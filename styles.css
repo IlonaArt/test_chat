@@ -6,6 +6,10 @@
     --border-color: rgba(173, 173, 173, 0.25);
     --sent-message-color: rgba(240, 236, 240, 0.53);
     --new-message-color: #e9f2fa;
+    --border-message-color: rgba(85, 85, 85, 0.38);
+    --border-button: rgba(2, 3, 2, 0.26);
+    --scrollbar-color: #ffffff;
+    --scrollbar-thumb-color: #c2c2c2;
 }
 
 * {
@@ -20,8 +24,12 @@ html, body {
     height: 100%;
 }
 
-button {
+button, .header__rating {
     cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
 }
 
 body {
@@ -60,14 +68,86 @@ body {
     margin-right: 14px;
 }
 
-.header__img-wrap {
+.header__name {
     display: flex;
     padding-top: 4px;
 }
 
-.header__wrap {
+.header__name-wrap {
+    display: flex;
+    flex-grow: 1;
+}
+
+.header__name-text-wrap {
     display: flex;
     flex-direction: column;
+}
+
+.header__rating-wrap {
+    position: relative;
+    width: 80px;
+    height: 16px;
+    margin-top: 6px;
+    margin-left: auto;
+    margin-right: 14px;
+    background-image: url("img/star_off.svg");
+    background-size: 16px 16px;
+}
+
+.header__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.header__rating {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    font-size: inherit;
+    margin: 0;
+    background-size: 16px 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.header__input:checked + .header__rating, 
+.header__rating:hover {
+    background-image: url("img/star_on.svg")
+}
+
+.header__rating:hover ~ .header__rating {
+    background-image: url("img/star_off.svg");
+}
+
+.header__rating:nth-of-type(1) {
+    z-index: 5;
+    width: 16px;
+}
+
+.header__rating:nth-of-type(2) {
+    z-index: 4;
+    width: 32px;
+}
+
+.header__rating:nth-of-type(3) {
+    z-index: 3;
+    width: 48px;
+}
+
+.header__rating:nth-of-type(4) {
+    z-index: 2;
+    width: 64px;
+}
+
+.header__rating:nth-of-type(5) {
+    z-index: 1;
+    width: 80px;
 }
 
 .user {
@@ -86,9 +166,9 @@ body {
 }
 
 .header__button-close {
+    flex-shrink: 0;
     border: none;
     padding: 0;
-    margin-left: auto;
     width: 23px;
     height: 23px;
     background: transparent url("img/close.png") no-repeat 0 100%;
@@ -98,7 +178,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     flex-grow: 1;
-    padding: 13px 15px 7px 30px;
+    padding: 13px 15px 0 30px;
 }
 
 .dialogue-message {
@@ -110,12 +190,18 @@ body {
     margin-bottom: 18px;
 }
 
-.dialogue__item_owner {
+.dialogue-message:last-child {
+    margin-bottom: 7px;
+}
+
+.dialogue-message_owner {
     background-color: rgba(240, 236, 240, 0.53); /* for IE11 */
     background-color: var(--sent-message-color);
 }
 
 .dialogue-message__user-img {
+    flex-shrink: 0;
+    align-self: flex-start;
     margin-right: 14px;
     margin-top: 2px;
 }
@@ -132,6 +218,22 @@ body {
     font-size: 0.857em;
     color: #7f7f7f; /* for IE11*/
     color: var(--small-font);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #ffffff;        /* for IE11 */
+    background-color: var(--scrollbar-color);
+}
+
+::-webkit-scrollbar-thumb {
+    width: 12px;
+    border-radius: 3px;
+    border: 7px solid transparent;
+    background-color: #c2c2c2;        /* for IE11 */
+    background-color: var(--scrollbar-thumb-color);
+    padding-bottom: 12px;
+    padding-right: 7px;
 }
 
 .message-form {
@@ -160,21 +262,28 @@ body {
     color: inherit;
     border-radius: 3px; 
     margin-bottom: 7px;
+    border: 1px solid rgba(85, 85, 85, 0.38);          /* for IE11 */
+    border: 1px solid var(--border-message-color);
 }
 
-.message-form__submit-button {
+.message-form__submit-button,
+.btn-show {
     font-size: 1.143em;
-    width: 135px;
     height: 30px;
     border-radius: 3px;
-    border: 1px solid rgba(2, 3, 2, 0.26);
+    border: 1px solid rgba(2, 3, 2, 0.26);          
+    border: 1px solid var(--border-button);
     background-image: linear-gradient(to top, #d4d4d8 0%, #ffffff 100%); /* for IE11 */
     background-image: linear-gradient(to top, var(--button-background) 0%, #ffffff 100%);
     color: #3e3e3e; /* for IE11 */
     color: var(--font-color);
 }
 
+.message-form__submit-button {
+    width: 135px;
+}
+
 .highlighter {
-    background-color: #e9f2fa;
+    background-color: #e9f2fa;    /* for IE11 */
     background-color: var(--new-message-color);
 }

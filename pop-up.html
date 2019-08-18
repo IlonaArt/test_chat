@@ -8,14 +8,29 @@
     <title>Pop-up</title>
 </head>
 <body>
-    <section class="pop-up pop-up__wrap">
+    <button class="btn-show" type="button">Открыть диалоговое окно</button>
+    <section class="pop-up pop-up__wrap hidden">
         <header class="pop-up__header header">
-            <div class="header__img-wrap">
-                <img class="header__user-img" src="img/img_main.jpg" width="45" height="45" alt="Токсикова Ольга, аватар">
-                <div class="header__wrap">
-                    <b class="user">Токсикова Ольга</b>
-                    <span class="user-location">Днепропетровск</span>
-                </div>
+            <div class="header__name-wrap">
+                <div class="header__name">
+                    <img class="header__user-img" src="img/img_main.jpg" width="45" height="45" alt="Токсикова Ольга, аватар">
+                    <div class="header__name-text-wrap">
+                        <b class="user">Токсикова Ольга</b>
+                        <span class="user-location">Днепропетровск</span>
+                    </div>
+                </div>   
+                <div class="header__rating-wrap">
+                    <input type="radio" class="header__input" name="rating" id="rating-1" value="1">
+                    <label for="rating-1" class="header__rating" aria-label="1"></label>
+                    <input type="radio" class="header__input" name="rating" id="rating-2" value="2">
+                    <label for="rating-2" class="header__rating" aria-label="2"></label>
+                    <input type="radio" class="header__input" name="rating" id="rating-3" value="3">
+                    <label for="rating-3" class="header__rating" aria-label="3"></label>
+                    <input type="radio" class="header__input" name="rating" id="rating-4" value="4">
+                    <label for="rating-4" class="header__rating" aria-label="4"></label>
+                    <input type="radio" class="header__input" name="rating" id="rating-5" value="5">
+                    <label for="rating-5" class="header__rating" aria-label="5"></label>    
+                </div> 
             </div>    
             <button class="header__button-close" type="button" aria-label="Кнопка закрытия окна"></button>
         </header>
@@ -27,7 +42,7 @@
                     отваливать. Мне</p>
                 <div class="dialogue-message__date">вчера в 17.45</div>
             </div>
-            <div class="dialogue__item dialogue__item_owner dialogue-message">
+            <div class="dialogue__item dialogue-message dialogue-message_owner">
                 <img class="dialogue-message__user-img" src="img/img2.jpg" width="31" height="31" alt="Мой аватар">
                 <p class="dialogue-message__user-text">Поисковик вам в помощь! Но цена примерно в половину стоимости платья.</p>
                 <div class="dialogue-message__date">вчера в 18.45</div>
@@ -38,7 +53,7 @@
                         где все гости будут наверняка одеты в наряды "от кутюр", а у меня со средствами туговато</p>
                 <div class="dialogue-message__date">сегодня в 17.45</div>
             </div>
-            <div class="dialogue__item dialogue__item_owner dialogue-message">
+            <div class="dialogue__item dialogue-message dialogue-message_owner">
                 <img class="dialogue-message__user-img" src="img/img2.jpg" width="31" height="31" alt="Мой аватар">
                 <p class="dialogue-message__user-text">Поисковик вам в помощь! Но цена примерно в половину стоимости платья.</p>
                 <div class="dialogue-message__date">18.45</div>
